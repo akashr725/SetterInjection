@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        
+        
+        <!--  dependent class-->
+        <bean class="com.Spring.AnnotationBean.BlueDart" id="bdart"></bean>
+        
+        <!-- target class -->
+        
+        <bean class="com.Spring.AnnotationBean.Flifkart" id="fkart">
+        
+        <property name="dart" ref="bdart"></property>
+        
+        <property name="biiAmnt" value="1200"></property>
+        
+        </bean>
+        
+        <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
+        
+     </beans>
